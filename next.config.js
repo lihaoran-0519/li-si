@@ -21,7 +21,11 @@ const nextConfig = {
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    unoptimized: false, // 确保图片优化开启
   },
+  // 确保静态文件正确服务
+  trailingSlash: false,
+  output: 'standalone',
 }
 
 module.exports = nextConfig
