@@ -15,17 +15,6 @@ const mockPhotos = [
     createdAt: '2025-12-15T10:00:00.000Z',
   },
   {
-    id: 2,
-    category: 'wedding',
-    url: '/images/wedding/微信图片_20251023111608_8_256.jpg',
-    title: '温馨时刻',
-    description: '相视而笑的甜蜜瞬间',
-    isFeatured: true,
-    sortOrder: 2,
-    likes: 18,
-    createdAt: '2025-11-20T15:30:00.000Z',
-  },
-  {
     id: 3,
     category: 'wedding',
     url: '/images/wedding/微信图片_20251023111608_9_256.jpg',
@@ -46,17 +35,6 @@ const mockPhotos = [
     sortOrder: 4,
     likes: 20,
     createdAt: '2025-09-05T14:20:00.000Z',
-  },
-  {
-    id: 5,
-    category: 'wedding',
-    url: '/images/wedding/微信图片_20251023111609_11_256.jpg',
-    title: '甜蜜对视',
-    description: '眼中只有彼此的美好时刻',
-    isFeatured: true,
-    sortOrder: 5,
-    likes: 19,
-    createdAt: '2025-08-15T16:45:00.000Z',
   },
   {
     id: 6,
@@ -80,28 +58,6 @@ const mockPhotos = [
     likes: 17,
     createdAt: '2025-06-15T09:15:00.000Z',
   },
-  {
-    id: 8,
-    category: 'wedding',
-    url: '/images/wedding/微信图片_20251023111613_15_256.jpg',
-    title: '美好回忆',
-    description: '记录我们爱情的美好回忆',
-    isFeatured: true,
-    sortOrder: 8,
-    likes: 23,
-    createdAt: '2025-05-20T14:30:00.000Z',
-  },
-  {
-    id: 9,
-    category: 'wedding',
-    url: '/images/wedding/证件照.jpg',
-    title: '正式证件照',
-    description: '正式的结婚证件照',
-    isFeatured: false,
-    sortOrder: 9,
-    likes: 15,
-    createdAt: '2025-04-10T10:00:00.000Z',
-  }
 ]
 
 export async function GET(request: NextRequest) {

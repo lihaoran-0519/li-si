@@ -35,17 +35,6 @@ export function PhotoGallery() {
       isLiked: false
     },
     {
-      id: '2',
-      src: '/images/wedding/微信图片_20251023111608_8_256.jpg',
-      alt: '温馨时刻',
-      category: 'wedding',
-      title: '温馨时刻',
-      description: '相视而笑的甜蜜瞬间',
-      date: '2025-11-20',
-      likes: 18,
-      isLiked: true
-    },
-    {
       id: '3',
       src: '/images/wedding/微信图片_20251023111608_9_256.jpg',
       alt: '优雅姿态',
@@ -66,17 +55,6 @@ export function PhotoGallery() {
       date: '2025-09-05',
       likes: 20,
       isLiked: false
-    },
-    {
-      id: '5',
-      src: '/images/wedding/微信图片_20251023111609_11_256.jpg',
-      alt: '甜蜜对视',
-      category: 'wedding',
-      title: '甜蜜对视',
-      description: '眼中只有彼此的美好时刻',
-      date: '2025-08-15',
-      likes: 19,
-      isLiked: true
     },
     {
       id: '6',
@@ -100,28 +78,6 @@ export function PhotoGallery() {
       likes: 17,
       isLiked: false
     },
-    {
-      id: '8',
-      src: '/images/wedding/微信图片_20251023111613_15_256.jpg',
-      alt: '美好回忆',
-      category: 'wedding',
-      title: '美好回忆',
-      description: '记录我们爱情的美好回忆',
-      date: '2025-05-20',
-      likes: 23,
-      isLiked: true
-    },
-    {
-      id: '9',
-      src: '/images/wedding/证件照.jpg',
-      alt: '正式证件照',
-      category: 'wedding',
-      title: '正式证件照',
-      description: '正式的结婚证件照',
-      date: '2025-04-10',
-      likes: 15,
-      isLiked: false
-    }
   ]
 
   const handleLike = (photoId: string) => {
