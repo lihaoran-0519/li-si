@@ -1,11 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import { Navigation } from '@/components/layout/Navigation'
 import { Footer } from '@/components/layout/Footer'
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: '黎浩然 & 李思 婚礼 | 分享我们的幸福时刻',
@@ -70,7 +67,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#E8B4B8" />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className="font-sans antialiased">
         <ErrorBoundary>
           <div className="min-h-screen bg-gradient-to-br from-rose-cream to-white">
             <Navigation />

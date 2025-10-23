@@ -78,7 +78,7 @@ export function ThanksMessage() {
       setCurrentMessage(thanksMessages[0])
       setIsLoading(false)
     }, 1000)
-  }, [])
+  }, [thanksMessages])
 
   const containerVariants = {
     hidden: { opacity: 0 },

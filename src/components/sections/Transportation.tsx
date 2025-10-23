@@ -333,7 +333,7 @@ export function Transportation() {
         <div className="flex items-center space-x-2 text-rose-gold">
           <span>🗺️</span>
           <p className="text-sm font-medium">
-            建议使用手机地图导航，搜索"松滋凯瑞国际酒店"即可
+            建议使用手机地图导航，搜索&ldquo;松滋凯瑞国际酒店&rdquo;即可
           </p>
         </div>
       </motion.div>

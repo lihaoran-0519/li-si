@@ -44,7 +44,7 @@ export function FeaturedPhotos() {
   const getMockPhotos = (): Photo[] => [
     {
       id: 1,
-      category: '婚纱照',
+      category: 'WEDDING_PHOTOS',
       url: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop&crop=center',
       thumbnailUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=300&fit=crop&crop=center',
       title: '浪漫婚纱照',
@@ -55,7 +55,7 @@ export function FeaturedPhotos() {
     },
     {
       id: 2,
-      category: '婚纱照',
+      category: 'WEDDING_PHOTOS',
       url: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop&crop=center',
       thumbnailUrl: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&h=300&fit=crop&crop=center',
       title: '温馨时刻',
@@ -66,7 +66,7 @@ export function FeaturedPhotos() {
     },
     {
       id: 3,
-      category: '婚纱照',
+      category: 'WEDDING_PHOTOS',
       url: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&h=600&fit=crop&crop=center',
       thumbnailUrl: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=400&h=300&fit=crop&crop=center',
       title: '优雅姿态',
@@ -77,7 +77,7 @@ export function FeaturedPhotos() {
     },
     {
       id: 4,
-      category: '婚纱照',
+      category: 'WEDDING_PHOTOS',
       url: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop&crop=center',
       thumbnailUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=300&fit=crop&crop=center',
       title: '幸福拥抱',
