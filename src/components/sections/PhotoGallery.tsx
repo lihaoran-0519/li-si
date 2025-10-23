@@ -21,12 +21,12 @@ export function PhotoGallery() {
   const [viewMode, setViewMode] = useState<'grid' | 'masonry'>('grid')
   const [sortBy, setSortBy] = useState<'date' | 'likes'>('date')
 
-  // 模拟照片数据
+  // 真实照片数据
   const photos: Photo[] = [
     {
       id: '1',
-      src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop&crop=center',
-      alt: '婚纱照1',
+      src: '/images/wedding/微信图片_20251023111608_7_256.jpg',
+      alt: '浪漫婚纱照',
       category: 'wedding',
       title: '浪漫婚纱照',
       description: '在美丽的花园里拍摄的婚纱照，记录我们的美好时光',
@@ -36,57 +36,90 @@ export function PhotoGallery() {
     },
     {
       id: '2',
-      src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop&crop=center',
-      alt: '求婚瞬间',
-      category: 'proposal',
-      title: '求婚时刻',
-      description: '那个特别的夜晚，他单膝跪地向我求婚',
+      src: '/images/wedding/微信图片_20251023111608_8_256.jpg',
+      alt: '温馨时刻',
+      category: 'wedding',
+      title: '温馨时刻',
+      description: '相视而笑的甜蜜瞬间',
       date: '2025-11-20',
       likes: 18,
       isLiked: true
     },
     {
       id: '3',
-      src: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&h=600&fit=crop&crop=center',
-      alt: '生活照1',
-      category: 'life',
-      title: '日常生活',
-      description: '一起做饭的温馨时光',
+      src: '/images/wedding/微信图片_20251023111608_9_256.jpg',
+      alt: '优雅姿态',
+      category: 'wedding',
+      title: '优雅姿态',
+      description: '经典优雅的婚纱照',
       date: '2025-10-10',
-      likes: 12,
+      likes: 22,
       isLiked: false
     },
     {
       id: '4',
-      src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&h=600&fit=crop&crop=center',
-      alt: '旅行照1',
-      category: 'travel',
-      title: '旅行回忆',
-      description: '第一次一起旅行，在美丽的海边',
+      src: '/images/wedding/微信图片_20251023111608_10_256.jpg',
+      alt: '幸福拥抱',
+      category: 'wedding',
+      title: '幸福拥抱',
+      description: '深情相拥的美好时光',
       date: '2025-09-05',
-      likes: 15,
+      likes: 20,
       isLiked: false
     },
     {
       id: '5',
-      src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop&crop=center',
-      alt: '家庭照1',
-      category: 'family',
-      title: '家庭聚会',
-      description: '和家人一起度过的美好时光',
+      src: '/images/wedding/微信图片_20251023111609_11_256.jpg',
+      alt: '甜蜜对视',
+      category: 'wedding',
+      title: '甜蜜对视',
+      description: '眼中只有彼此的美好时刻',
       date: '2025-08-15',
-      likes: 20,
+      likes: 19,
       isLiked: true
     },
     {
       id: '6',
-      src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop&crop=center',
-      alt: '订婚照',
-      category: 'engagement',
-      title: '订婚仪式',
-      description: '正式的订婚仪式，双方家人都很开心',
+      src: '/images/wedding/微信图片_20251023111609_12_256.jpg',
+      alt: '浪漫牵手',
+      category: 'wedding',
+      title: '浪漫牵手',
+      description: '手牵手走向幸福的未来',
       date: '2025-07-20',
-      likes: 22,
+      likes: 21,
+      isLiked: false
+    },
+    {
+      id: '7',
+      src: '/images/wedding/微信图片_20251023111610_13_256.jpg',
+      alt: '幸福笑容',
+      category: 'wedding',
+      title: '幸福笑容',
+      description: '发自内心的幸福笑容',
+      date: '2025-06-15',
+      likes: 17,
+      isLiked: false
+    },
+    {
+      id: '8',
+      src: '/images/wedding/微信图片_20251023111613_15_256.jpg',
+      alt: '美好回忆',
+      category: 'wedding',
+      title: '美好回忆',
+      description: '记录我们爱情的美好回忆',
+      date: '2025-05-20',
+      likes: 23,
+      isLiked: true
+    },
+    {
+      id: '9',
+      src: '/images/wedding/证件照.jpg',
+      alt: '正式证件照',
+      category: 'wedding',
+      title: '正式证件照',
+      description: '正式的结婚证件照',
+      date: '2025-04-10',
+      likes: 15,
       isLiked: false
     }
   ]
@@ -192,7 +225,7 @@ export function PhotoGallery() {
                 src={photo.src}
                 alt={photo.alt}
                 fill
-                className="object-cover transition-transform duration-300 group-hover:scale-110"
+                className="object-contain transition-transform duration-300 group-hover:scale-110"
                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
               />
               

@@ -168,13 +168,14 @@ export function FeaturedPhotos() {
             >
               {photos.map((photo, index) => (
                 <SwiperSlide key={photo.id}>
-                  <div className="relative h-96 md:h-[500px] group">
+                  <div className="relative w-full h-96 md:h-[500px] group overflow-hidden">
                     <Image
                       src={photo.url}
                       alt={photo.title || `婚纱照 ${index + 1}`}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                       priority={index === 0}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
@@ -234,7 +235,7 @@ export function FeaturedPhotos() {
                     src={photo.thumbnailUrl || photo.url}
                     alt={photo.title || `缩略图 ${index + 1}`}
                     fill
-                    className="object-cover"
+                    className="object-cover rounded-lg"
                   />
                 </button>
               ))}
