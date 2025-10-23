@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Photo {
+  id            Int      @id @default(autoincrement())
+  category      Category
+  url           String   @db.VarChar(500)
+  thumbnailUrl  String?  @db.VarChar(500) @map("thumbnail_url")
+  title         String?  @db.VarChar(200)
+  description   String?
+  sortOrder     Int      @default(0) @map("sort_order")
+  isFeatured    Boolean  @default(false) @map("is_featured")
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  @@map("photos")
+}
+
+model Message {
+  id          Int      @id @default(autoincrement())
+  guestName   String   @db.VarChar(100) @map("guest_name")
+  guestPhone  String?  @db.VarChar(20) @map("guest_phone")
+  message     String
+  isApproved  Boolean  @default(true) @map("is_approved")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("messages")
+}
+
+model WeddingInfo {
+  id            Int      @id @default(autoincrement())
+  brideName     String   @db.VarChar(100) @map("bride_name")
+  groomName     String   @db.VarChar(100) @map("groom_name")
+  weddingDate   DateTime @map("wedding_date")
+  weddingVenue  String   @db.VarChar(200) @map("wedding_venue")
+  venueAddress  String   @map("venue_address")
+  venuePhone    String?  @db.VarChar(20) @map("venue_phone")
+  parkingInfo   String?  @map("parking_info")
+  contactPerson String?  @db.VarChar(100) @map("contact_person")
+  contactPhone  String?  @db.VarChar(20) @map("contact_phone")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  @@map("wedding_info")
+}
+
+enum Category {
+  WEDDING_PHOTOS
+  DATING_MOMENTS
+  PROPOSAL_MOMENT
+  DAILY_LIFE
+}
