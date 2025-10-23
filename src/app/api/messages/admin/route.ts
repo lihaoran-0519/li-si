@@ -4,6 +4,13 @@ import { prisma } from '@/lib/db'
 // 获取所有留言（包括未审核的）
 export async function GET(request: NextRequest) {
   try {
+    if (!prisma) {
+      return NextResponse.json(
+        { error: 'Database not available' },
+        { status: 503 }
+      )
+    }
+
     const { searchParams } = new URL(request.url)
     const page = Number.parseInt(searchParams.get('page') || '1')
     const limit = Number.parseInt(searchParams.get('limit') || '20')
@@ -39,6 +46,13 @@ export async function GET(request: NextRequest) {
 // 更新留言状态（审核通过/拒绝）
 export async function PATCH(request: NextRequest) {
   try {
+    if (!prisma) {
+      return NextResponse.json(
+        { error: 'Database not available' },
+        { status: 503 }
+      )
+    }
+
     const body = await request.json()
     const { id, isApproved } = body
     
@@ -71,6 +85,13 @@ export async function PATCH(request: NextRequest) {
 // 删除留言
 export async function DELETE(request: NextRequest) {
   try {
+    if (!prisma) {
+      return NextResponse.json(
+        { error: 'Database not available' },
+        { status: 503 }
+      )
+    }
+
     const { searchParams } = new URL(request.url)
     const id = searchParams.get('id')
     
