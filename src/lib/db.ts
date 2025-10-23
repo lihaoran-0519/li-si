@@ -4,8 +4,16 @@ const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined
 }
 
+// 检查是否在构建时
+const isBuildTime = () => {
+  return process.env.NODE_ENV === 'production' && !process.env.DATABASE_URL
+}
+
 // 检查数据库连接是否可用
 const isDatabaseAvailable = () => {
+  // 在构建时直接返回 false
+  if (isBuildTime()) return false
+  
   // 在构建时，如果没有 DATABASE_URL 或连接字符串无效，返回 false
   if (!process.env.DATABASE_URL) return false
   
