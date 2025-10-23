@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 
 interface ThanksMessage {
   id: string
@@ -17,7 +17,7 @@ export function ThanksMessage() {
   const [isLoading, setIsLoading] = useState(true)
 
   // 模拟感谢致辞数据
-  const thanksMessages: ThanksMessage[] = [
+  const thanksMessages: ThanksMessage[] = useMemo(() => [
     {
       id: '1',
       title: '致所有亲朋好友',
@@ -70,7 +70,7 @@ export function ThanksMessage() {
       date: '2026-02-21',
       isMain: false
     }
-  ]
+  ], [])
 
   useEffect(() => {
     // 模拟加载数据
