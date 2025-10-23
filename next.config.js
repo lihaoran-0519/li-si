@@ -21,11 +21,29 @@ const nextConfig = {
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    unoptimized: false, // 确保图片优化开启
+    unoptimized: true, // 暂时禁用图片优化，避免中文文件名问题
   },
   // 确保静态文件正确服务
   trailingSlash: false,
   output: 'standalone',
+  // 添加静态文件处理配置
+  async headers() {
+    return [
+      {
+        source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+          {
+            key: 'Content-Type',
+            value: 'image/jpeg',
+          },
+        ],
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
